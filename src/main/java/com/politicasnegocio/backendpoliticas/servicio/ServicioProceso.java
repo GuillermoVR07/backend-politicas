@@ -7,6 +7,11 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+import com.politicasnegocio.backendpoliticas.dto.SolicitudActualizarDiagrama;
+import com.politicasnegocio.backendpoliticas.modelo.Diagrama;
+
+import java.time.LocalDateTime;
+
 @Service
 public class ServicioProceso {
 
@@ -42,4 +47,20 @@ public class ServicioProceso {
 
         return repositorioProceso.save(proceso);
     }
+
+    public Proceso actualizarDiagrama(String id, SolicitudActualizarDiagrama solicitud) {
+        Proceso proceso = buscarProcesoPorId(id);
+
+        Diagrama diagrama = new Diagrama();
+        diagrama.contenidoXml = solicitud.contenidoXml();
+        diagrama.contenidoJson = solicitud.contenidoJson();
+        diagrama.generadoPorIa = solicitud.generadoPorIa();
+        diagrama.fechaActualizacion = LocalDateTime.now().toString();
+
+        proceso.diagrama = diagrama;
+
+        return repositorioProceso.save(proceso);
+    }
+
+
 }

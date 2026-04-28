@@ -6,6 +6,7 @@ import com.politicasnegocio.backendpoliticas.servicio.ServicioProceso;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import com.politicasnegocio.backendpoliticas.dto.SolicitudActualizarDiagrama;
 
 @RestController
 @RequestMapping("/api/procesos")
@@ -39,4 +40,13 @@ public class ControladorProceso {
     ) {
         return servicioProceso.actualizarProceso(id, solicitud);
     }
+
+    @PutMapping("/{id}/diagrama")
+    public Proceso actualizarDiagrama(
+            @PathVariable String id,
+            @RequestBody SolicitudActualizarDiagrama solicitud
+    ) {
+        return servicioProceso.actualizarDiagrama(id, solicitud);
+    }
+
 }
