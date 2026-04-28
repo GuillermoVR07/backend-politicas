@@ -1,0 +1,64 @@
+BACKEND_POLITICAS
+│
+├── pom.xml
+│
+└── src
+    └── main
+        ├── java
+        │   └── com
+        │       └── politicasnegocio
+        │           └── backendpoliticas
+        │               ├── BackendPoliticasApplication.java
+        │               │
+        │               ├── configuracion
+        │               │   └── ConfiguracionCors.java
+        │               │
+        │               ├── controlador
+        │               │   ├── ControladorProceso.java
+        │               │   ├── ControladorTramite.java
+        │               │   ├── ControladorDepartamento.java
+        │               │   ├── ControladorDocumentoComunicado.java
+        │               │   ├── ControladorIndicador.java
+        │               │   └── ControladorIa.java
+        │               │
+        │               ├── dto
+        │               │   ├── SolicitudCrearProceso.java
+        │               │   ├── SolicitudCrearTramite.java
+        │               │   ├── SolicitudCambiarEstado.java
+        │               │   ├── SolicitudCambiarDepartamento.java
+        │               │   ├── SolicitudDocumentoComunicado.java
+        │               │   ├── SolicitudGenerarDiagrama.java
+        │               │   └── RespuestaIndicadores.java
+        │               │
+        │               ├── enumeracion
+        │               │   ├── EstadoTramite.java
+        │               │   └── TipoDocumentoComunicado.java
+        │               │
+        │               ├── modelo
+        │               │   ├── Cliente.java
+        │               │   ├── Departamento.java
+        │               │   ├── Diagrama.java
+        │               │   ├── DocumentoComunicado.java
+        │               │   ├── Funcionario.java
+        │               │   ├── Proceso.java
+        │               │   ├── SeguimientoTramite.java
+        │               │   └── Tramite.java
+        │               │
+        │               ├── repositorio
+        │               │   ├── RepositorioCliente.java
+        │               │   ├── RepositorioDepartamento.java
+        │               │   ├── RepositorioDocumentoComunicado.java
+        │               │   ├── RepositorioFuncionario.java
+        │               │   ├── RepositorioProceso.java
+        │               │   └── RepositorioTramite.java
+        │               │
+        │               └── servicio
+        │                   ├── ServicioProceso.java
+        │                   ├── ServicioTramite.java
+        │                   ├── ServicioDocumentoComunicado.java
+        │                   ├── ServicioIndicador.java
+        │                   ├── ServicioIa.java
+        │                   └── ServicioNotificacion.java
+        │
+        └── resources
+            └── application.properties
