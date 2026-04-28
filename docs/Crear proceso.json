@@ -1,0 +1,10 @@
+{
+  "nombre": "Solicitud de trámite empresarial",
+  "descripcion": "Proceso base para demostrar el flujo del sistema",
+  "departamentos": [
+    "Atención al cliente",
+    "Evaluación",
+    "Legal",
+    "Almacén"
+  ]
+}

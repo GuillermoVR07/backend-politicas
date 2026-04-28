@@ -1,0 +1,9 @@
+{
+  "codigo": "TRAM-001",
+  "titulo": "Solicitud empresarial de prueba",
+  "descripcion": "Trámite de ejemplo para la demostración universitaria",
+  "identificacionCiudadano": "12345678",
+  "procesoId": "ID_DEL_PROCESO",
+  "departamentoInicialId": "DEP_ATENCION",
+  "nombreDepartamentoInicial": "Atención al cliente"
+}

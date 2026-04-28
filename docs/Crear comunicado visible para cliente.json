@@ -1,0 +1,9 @@
+{
+  "tramiteId": "ID_DEL_TRAMITE",
+  "tipo": "COMUNICADO",
+  "nombre": "Actualización del trámite",
+  "descripcion": "Su trámite fue derivado al departamento legal.",
+  "departamentoId": "DEP_LEGAL",
+  "nombreDepartamento": "Legal",
+  "visibleParaCliente": true
+}
