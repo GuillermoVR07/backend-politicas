@@ -14,10 +14,8 @@ public class ConfiguracionCors {
             @Override
             public void addCorsMappings(CorsRegistry registro) {
                 registro.addMapping("/api/**")
-                        .allowedOrigins(
-                                "http://localhost:4200",
-                                "http://localhost:8081",
-                                "http://localhost:52070"
+                        .allowedOriginPatterns(
+                                "http://localhost:*"
                         )
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*");
