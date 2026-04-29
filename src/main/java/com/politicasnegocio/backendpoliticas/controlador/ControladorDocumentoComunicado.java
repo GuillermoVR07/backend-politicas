@@ -33,4 +33,18 @@ public class ControladorDocumentoComunicado {
     public List<DocumentoComunicado> listarVisiblesParaCliente(@PathVariable String tramiteId) {
         return servicioDocumentoComunicado.listarVisiblesParaCliente(tramiteId);
     }
+
+    @PutMapping("/{id}")
+    public DocumentoComunicado actualizarDocumentoComunicado(
+            @PathVariable String id,
+            @RequestBody SolicitudDocumentoComunicado solicitud
+    ) {
+        return servicioDocumentoComunicado.actualizarDocumentoComunicado(id, solicitud);
+    }
+
+    @DeleteMapping("/{id}")
+    public void eliminarDocumentoComunicado(@PathVariable String id) {
+        servicioDocumentoComunicado.eliminarDocumentoComunicado(id);
+    }
+
 }

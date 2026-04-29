@@ -39,4 +39,31 @@ public class ServicioDocumentoComunicado {
     public List<DocumentoComunicado> listarVisiblesParaCliente(String tramiteId) {
         return repositorioDocumentoComunicado.findByTramiteIdAndVisibleParaCliente(tramiteId, true);
     }
+
+    public DocumentoComunicado buscarDocumentoComunicadoPorId(String id) {
+        return repositorioDocumentoComunicado.findById(id)
+                .orElseThrow(() -> new RuntimeException("No se encontró el documento o comunicado solicitado"));
+    }
+
+    public DocumentoComunicado actualizarDocumentoComunicado(
+            String id,
+            SolicitudDocumentoComunicado solicitud
+    ) {
+        DocumentoComunicado documentoComunicado = buscarDocumentoComunicadoPorId(id);
+
+        documentoComunicado.tramiteId = solicitud.tramiteId();
+        documentoComunicado.tipo = solicitud.tipo();
+        documentoComunicado.nombre = solicitud.nombre();
+        documentoComunicado.descripcion = solicitud.descripcion();
+        documentoComunicado.departamentoId = solicitud.departamentoId();
+        documentoComunicado.nombreDepartamento = solicitud.nombreDepartamento();
+        documentoComunicado.visibleParaCliente = solicitud.visibleParaCliente();
+
+        return repositorioDocumentoComunicado.save(documentoComunicado);
+    }
+
+    public void eliminarDocumentoComunicado(String id) {
+        DocumentoComunicado documentoComunicado = buscarDocumentoComunicadoPorId(id);
+        repositorioDocumentoComunicado.delete(documentoComunicado);
+    }
 }

@@ -6,6 +6,7 @@ import com.politicasnegocio.backendpoliticas.dto.SolicitudCrearTramite;
 import com.politicasnegocio.backendpoliticas.modelo.Tramite;
 import com.politicasnegocio.backendpoliticas.servicio.ServicioTramite;
 import org.springframework.web.bind.annotation.*;
+import com.politicasnegocio.backendpoliticas.dto.SolicitudActualizarTramite;
 
 import java.util.List;
 
@@ -59,4 +60,20 @@ public class ControladorTramite {
     ) {
         return servicioTramite.cambiarDepartamento(id, solicitud);
     }
+
+
+    @PutMapping("/{id}")
+    public Tramite actualizarTramite(
+            @PathVariable String id,
+            @RequestBody SolicitudActualizarTramite solicitud
+    ) {
+        return servicioTramite.actualizarTramite(id, solicitud);
+    }
+
+    @DeleteMapping("/{id}")
+    public void eliminarTramite(@PathVariable String id) {
+        servicioTramite.eliminarTramite(id);
+    }
+
+
 }

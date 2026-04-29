@@ -62,5 +62,10 @@ public class ServicioProceso {
         return repositorioProceso.save(proceso);
     }
 
+    public void eliminarProceso(String id) {
+        Proceso proceso = buscarProcesoPorId(id);
+        repositorioProceso.delete(proceso);
+    }
+
 
 }

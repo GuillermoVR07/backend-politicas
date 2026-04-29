@@ -38,4 +38,9 @@ public class ControladorDepartamento {
     ) {
         return servicioDepartamento.actualizarDepartamento(id, departamento);
     }
+
+    @DeleteMapping("/{id}")
+    public void eliminarDepartamento(@PathVariable String id) {
+        servicioDepartamento.eliminarDepartamento(id);
+    }
 }

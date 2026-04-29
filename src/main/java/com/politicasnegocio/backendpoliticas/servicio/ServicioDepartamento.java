@@ -36,4 +36,9 @@ public class ServicioDepartamento {
 
         return repositorioDepartamento.save(departamento);
     }
+
+    public void eliminarDepartamento(String id) {
+        Departamento departamento = buscarDepartamentoPorId(id);
+        repositorioDepartamento.delete(departamento);
+    }
 }

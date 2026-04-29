@@ -49,4 +49,9 @@ public class ControladorProceso {
         return servicioProceso.actualizarDiagrama(id, solicitud);
     }
 
+    @DeleteMapping("/{id}")
+    public void eliminarProceso(@PathVariable String id) {
+        servicioProceso.eliminarProceso(id);
+    }
+
 }

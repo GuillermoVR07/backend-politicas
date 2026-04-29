@@ -7,6 +7,7 @@ import com.politicasnegocio.backendpoliticas.enumeracion.EstadoTramite;
 import com.politicasnegocio.backendpoliticas.modelo.SeguimientoTramite;
 import com.politicasnegocio.backendpoliticas.modelo.Tramite;
 import com.politicasnegocio.backendpoliticas.repositorio.RepositorioTramite;
+import com.politicasnegocio.backendpoliticas.dto.SolicitudActualizarTramite;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -125,4 +126,25 @@ public class ServicioTramite {
 
         return tramiteGuardado;
     }
+
+
+    public Tramite actualizarTramite(String tramiteId, SolicitudActualizarTramite solicitud) {
+        Tramite tramite = buscarTramitePorId(tramiteId);
+
+        tramite.codigo = solicitud.codigo();
+        tramite.titulo = solicitud.titulo();
+        tramite.descripcion = solicitud.descripcion();
+        tramite.identificacionCiudadano = solicitud.identificacionCiudadano();
+        tramite.procesoId = solicitud.procesoId();
+        tramite.fechaUltimaActualizacion = LocalDateTime.now().toString();
+
+        return repositorioTramite.save(tramite);
+    }
+
+    public void eliminarTramite(String tramiteId) {
+        Tramite tramite = buscarTramitePorId(tramiteId);
+        repositorioTramite.delete(tramite);
+    }
+
+
 }
